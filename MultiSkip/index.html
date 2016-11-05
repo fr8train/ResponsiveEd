@@ -1,0 +1,536 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>MultiSkip</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- KNOCKOUTJS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+
+    <!-- BOOTFLAT -->
+    <link href="css/site.min.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+      <script src="lib/html5shiv.lib"></script>
+      <script src="lib/respond.min.lib"></script>
+    <![endif]-->
+
+    <script src="js/site.min.js"></script>
+
+    <!-- PROCTOR FILES -->
+    <link href='https://fonts.googleapis.com/css?family=Kadwa:700' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+        .multiskip-header {
+            font-family: 'Kadwa', serif !important;
+            margin: 15px 0px;
+            text-transform: uppercase;
+            color: #FDB514;
+        }
+
+        .overlay {
+            position: fixed;
+            background: #000;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            /* IE 8 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+            /* IE 5-7 */
+            filter: alpha(opacity=50);
+            /* Netscape */
+            -moz-opacity: 0.5;
+            /* Safari 1.x */
+            -khtml-opacity: 0.5;
+            /* Good browsers */
+            opacity: 0.5;
+        }
+
+        .loading {
+            position: fixed;
+            top: calc(50% - 37px);
+            background: #fff;
+            padding: 16px 10px;
+            border-radius: 50%;
+            left: calc(50% - 37px);
+        }
+
+        .panel:first-child {
+            margin-top: 20px;
+        }
+
+        body {
+            background-color: rgb(241, 242, 246);
+        }
+
+        .table-header {
+            width: 100px;
+            max-width: 100px;
+            min-width: 100px;
+        }
+
+        .ellipse {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .no-border {
+            border-top: 1px solid #fff !important;
+            border-bottom: 1px solid #fff !important;
+            border-left: 1px solid #fff !important;
+        }
+
+            .no-border.last {
+                border-bottom: 1px solid #ddd !important;
+            }
+
+        .table td,
+        .table th {
+            min-height: 38px;
+            height: 38px;
+            max-height: 38px;
+        }
+
+        .row.no-gutters {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+            .row.no-gutters > [class^="col-"],
+            .row.no-gutters > [class*=" col-"] {
+                padding-right: 0;
+                padding-left: 0;
+            }
+    </style>
+
+    <script src="js/DLAP.js"></script>
+    <script src="js/objects/user.js"></script>
+    <script src="js/objects/enrollment.js"></script>
+    <script src="js/objects/course.js"></script>
+    <script src="js/objects/item.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 navbar-inverse">
+                <h3 class="multiskip-header">MultiSkip</h3>
+            </div>
+        </div>
+        <div class="row" data-bind="visible: user.enrollments().length === 0">
+            <div class="col-xs-12">
+                <h3 class="text-center">You do not have any teacher enrollments.</h3>
+            </div>
+        </div>
+        <div class="row" data-bind="visible: user.enrollments().length > 0">
+            <div class="col-xs-12" data-bind="foreach: user.enrollments.sort(function (left, right) { return left.course.title() == right.course.title() ? 0 : (left.course.title() < right.course.title() ? -1 : 1); })">
+                <!-- ko if: students().length > 0 -->
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span data-bind="text: course.title"></span></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row no-gutters">
+                            <div class="col-xs-4 col-sm-3 col-lg-2">
+                                <table class="table table-bordered" style="margin-bottom: 0px;">
+                                    <thead>
+                                        <tr>
+                                            <th class="no-border"></th>
+                                        </tr>
+                                        <tr>
+                                            <th class="no-border last"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="foreach: $data.sortedStudents">
+                                        <tr>
+                                            <td class="ellipse" style="cursor: pointer;" data-bind="text: displayName,
+                                                click: function() {
+                                                    if ($root.multi.personOfInterest().length > 0) {
+                                                        var target = $root._indexOf($root.multi.personOfInterest(), 'enrollment.id', $data.enrollment.id());
+                                                        
+                                                        if (target >= 0) {
+                                                            $root.multi.personOfInterest.remove(function(item) {
+                                                                return item.enrollment.id == $data.enrollment.id();
+                                                            });
+                                                        } else {
+                                                            $root.multi.personOfInterest.push(ko.toJS($data));
+                                                        }
+                                                    } else {
+                                                        $root.multi.personOfInterest.push(ko.toJS($data));
+                                                    }
+                                                },
+                                                css: {
+                                                    'alert': $root._indexOf($root.multi.personOfInterest(),'enrollment.id', $data.enrollment.id()) >= 0,
+                                                    'alert-warning': $root._indexOf($root.multi.personOfInterest(),'enrollment.id', $data.enrollment.id()) >= 0
+                                                }">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-xs-8 col-sm-9 col-lg-10" style="overflow-x: auto;">
+                                <table class="table table-bordered" style="margin-bottom: 0px;">
+                                    <thead>
+                                        <tr data-bind="foreach: $data.course.headers">
+                                            <th class="table-header" style="cursor: pointer;" data-bind="attr: { 'colspan': $data.colspan },
+                                                                                    click: function() {
+                                                                                        if (!vm.multi.enableMultiClassSelectedError()) {
+                                                                                            vm.multi.sectionOfInterest(ko.toJS($data));
+                                                                                            vm.multi.courseOfInterest($parent.course);
+                                                                                        }
+                                                                                    }"><div class="ellipse" data-bind="text: $data.name, attr: { 'title': $data.name }"></div></th>
+                                        </tr>
+                                        <tr data-bind="foreach: $data.course.gradables">
+                                            <th class="table-header"><div class="ellipse" data-bind="text: $data.name, attr: { 'title': $data.name() }"></div></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="foreach: $data.sortedStudents">
+                                        <tr data-bind="foreach: $data.enrollment.gradables">
+                                            <td align="center" style="cursor: pointer" data-bind="click: function() { $data.click($parent.enrollment.id()) }">
+                                                <!-- ko if: $data.isExcused() -->
+                                                <i class="fa fa-ban"></i>
+                                                <!-- /ko -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+
+    <div data-bind="visible: show.overlay() || multi.readyForCommit()" class="overlay"></div>
+
+    <div data-bind="visible: show.loading()" class="loading"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>
+
+    <div class="modal" data-bind="css:{ 'show': multi.readyForCommit() }">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-bind="click: function() { multi.sectionOfInterest(null); }" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Excuse Multiple Assignments</h4>
+                </div>
+                <div class="modal-body text-center">
+                    <div>You have selected to excuse </div>
+                    <div data-bind="foreach: multi.personOfInterest">
+                        <div style="margin-top: 10px; margin-bottom: 10px;">
+                            <strong data-bind="text: firstName"></strong>&nbsp;
+                            <strong data-bind="text: lastName"></strong>
+                        </div>
+                    </div>
+                    <div>from all assignments found within</div>
+                    <div style="margin-top: 10px; margin-bottom: 10px;"><strong data-bind="text: multi.sectionOfInterest() ? multi.sectionOfInterest().name : ''"></strong></div>
+                    <div><em>Please click the "Commit" button to send the batch of excused assignments to be processed.</em></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-bind="click: function() { multi.sectionOfInterest(null); }">Cancel</button>
+                    <button type="button" class="btn" data-bind="click: function() { processMulti(true); }">Commit and Deselect Students</button>
+                    <button type="button" class="btn btn-warning" data-bind="click: function() { processMulti(false); }">Commit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="position:fixed; top: 15px; left: 0px; width: 100%;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="alert alert-danger alert-dismissable" style="display: none;" data-bind="visible: multi.enableMultiClassSelectedError()">
+                        <h4>Uh-oh!</h4>
+                        <p>I've noticed that you've got selections in multiple classes! You can scroll through and find the selection yourself or click the button below and I'll reset all of the student selections for you!</p>
+                        <p><button class="btn btn-danger" type="button" data-bind="click: function() {  vm.multi.personOfInterest.removeAll(); }">Reset all student selections</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function modifyStatus(status) {
+            if (status !== null && typeof status !== "undefined") {
+                var stringified = status.toString(16);
+                switch (stringified.length) {
+                    case 1:
+                        var pointOfInterest = parseInt(stringified, 16);
+                        if (!$.inArray(pointOfInterest, [4, 5, 6, 7, 12, 15]))
+                            return parseInt("8" + (pointOfInterest + 4).toString(16), 16);
+                        else
+                            return parseInt("8" + stringified, 16);
+                    default:
+                        var prefix = stringified.substring(0, stringified.length - 2);
+                        var pointOfInterest = parseInt(stringified.substring(stringified.length - 2, stringified.length - 1), 16);
+                        var suffix = parseInt(stringified.substring(stringified.length - 1), 16);
+
+                        if (pointOfInterest < 8) {
+                            if (!$.inArray(suffix, [4, 5, 6, 7, 12, 15]))
+                                return parseInt(prefix + (pointOfInterest + 8).toString(16) + (suffix + 4).toString(16), 16);
+                            else
+                                return parseInt(prefix + (pointOfInterest + 8).toString(16) + suffix.toString(16), 16);
+                        }
+                        else
+                            return parseInt(prefix + (pointOfInterest - 8).toString(16) + suffix.toString(16), 16);
+                }
+            }
+            else
+                return parseInt("84", 16);
+        }
+
+        // APP VIEWMODEL
+        function AppViewModel() {
+            var self = this;
+
+            // UI RELATED FUNCTIONS
+            self.show = {
+                overlay: ko.observable(false),
+                loading: ko.observable(false),
+                targets: {},
+                reset: function () {
+                    self.show.targets = {};
+                },
+                targetStart: function () {
+                    var guid = self.guid();
+
+                    self.show.targets[guid] = false;
+
+                    return guid;
+                },
+                targetEnd: function (guid) {
+                    if (self.show.targets[guid] !== undefined)
+                        self.show.targets[guid] = true;
+
+                    var hasFinished = true;
+                    $.each(self.show.targets, function (k, v) {
+                        if (!v) {
+                            hasFinished = false;
+                            return false;
+                        }
+                    });
+
+                    if (hasFinished)
+                        self.show.reset();
+
+                    return hasFinished;
+                }
+            }
+
+            self._show = function () {
+                self.show.overlay(true);
+                self.show.loading(true);
+
+                return self.show.targetStart();
+            }
+
+            self._hide = function (guid) {
+                if (self.show.targetEnd(guid)) {
+                    self.show.overlay(false);
+                    self.show.loading(false);
+                }
+            }
+
+            self.guid = function () {
+                return self.s4() + self.s4() + '-' + self.s4() + '-' + self.s4() + '-' +
+                  self.s4() + '-' + self.s4() + self.s4() + self.s4();
+            }
+
+            self.s4 = function () {
+                return Math.floor((1 + Math.random()) * 0x10000)
+                  .toString(16)
+                  .substring(1);
+            }
+
+            self._indexOf = function (arr, key, value) {
+                var index = -1;
+
+                for (var i = 0; i < arr.length; i++) {
+                    var _split = key.split('.');
+
+                    if (_split.length > 1) {
+                        if (arr[i][_split[0]][_split[1]] == value) {
+                            index = i;
+                            break;
+                        }
+                    } else {
+                        if (arr[i][key] == value) {
+                            index = i;
+                            break;
+                        }
+                    }
+                }
+
+                return index;
+            }
+
+            self.multi = {
+                personOfInterest: ko.observableArray(),
+                sectionOfInterest: ko.observable(),
+                courseOfInterest: ko.observable(),
+                status: ko.observable()
+            }
+
+            self.multi.enableMultiClassSelectedError = ko.computed(function () {
+                var targetCourseId;
+
+                for (var i = 0; i < self.multi.personOfInterest().length; i++) {
+                    if (!targetCourseId) {
+                        targetCourseId = vm.multi.personOfInterest()[i].enrollment.course.id;
+                        continue;
+                    }
+
+                    if (targetCourseId != vm.multi.personOfInterest()[i].enrollment.course.id)
+                        return true;
+                }
+
+                return false;
+            })
+
+            self.multi.readyForCommit = ko.computed(function () {
+                return self.multi.personOfInterest() && !self.multi.enableMultiClassSelectedError() && self.multi.sectionOfInterest() ? true : false;
+            })
+
+            self.processMulti = function (deselectStudents) {
+                if (self.multi.personOfInterest().length > 0) {
+                    var headItemId = self.multi.sectionOfInterest().id;
+                    self.multi.status(null);
+                    for (var l = 0; l < self.multi.personOfInterest().length; l++) {
+                        var targetEnrollment = null;
+                        self.multi.sectionOfInterest(null);
+                        self.show.overlay(true);
+                        self.show.loading(true);
+
+                        for (var i = 0; i < self.user.enrollments().length; i++) {
+                            if (self.user.enrollments()[i].course.id() == self.multi.courseOfInterest().id()) {
+                                for (var j = 0; j < self.user.enrollments()[i].sortedStudents().length; j++) {
+                                    if (self.user.enrollments()[i].sortedStudents()[j].enrollment.id() == self.multi.personOfInterest()[l].enrollment.id) {
+                                        targetEnrollment = self.user.enrollments()[i].sortedStudents()[j].enrollment;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (targetEnrollment)
+                                break;
+                        }
+
+                        self.processMultiRecursive(targetEnrollment, self.multi.courseOfInterest().items, headItemId, [], null);
+                    }
+
+                    if (deselectStudents)
+                        self.multi.personOfInterest.removeAll();
+                }
+            }
+
+            self.processMultiRecursive = function (enrollment, currentItem, headItemId, parentIdChain) {
+                if (currentItem.gradable() && parentIdChain.indexOf(headItemId) >= 0) {
+                    var targetItem = null;
+                    for (var i = 0; i < enrollment.gradables().length; i++) {
+                        if (enrollment.gradables()[i].id == currentItem.id())
+                            targetItem = enrollment.gradables()[i];
+                    }
+
+                    if (targetItem) {
+                        if (!self.multi.status() && self.multi.status() !== 0) {
+                            targetItem.status(modifyStatus(targetItem.status()));
+                            self.multi.status(targetItem.status());
+                        }
+                        else
+                            targetItem.status(self.multi.status());
+
+                        var waitToken5 = self._show();
+                        _DLAP.post('putteacherresponses',
+                                                    null,
+                                                    {
+                                                        "requests": {
+                                                            "teacherresponse": [{
+                                                                "enrollmentid": enrollment.id(),
+                                                                "itemid": targetItem.id,
+                                                                "status": self.multi.status(),
+                                                                "mask": 132
+                                                            }]
+                                                        }
+                                                    },
+                                                function (response) {
+                                                    console.log(response);
+                                                    self._hide(waitToken5);
+                                                });
+                    }
+                }
+
+                for (var i = 0, total = currentItem.children().length; i < total; i++) {
+                    parentIdChain.push(currentItem.id());
+                    self.processMultiRecursive(enrollment, currentItem.children()[i], headItemId, parentIdChain);
+                    parentIdChain.splice(parentIdChain.indexOf(currentItem.id()), 1);
+                }
+            }
+
+            self.user = new User();
+        }
+
+        var vm = new AppViewModel();
+
+        ko.applyBindings(vm);
+
+        // BUILD PARAMS
+        var params = {};
+        var deconstructed = window.location.href.substring(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < deconstructed.length; i++) {
+            var param = deconstructed[i].split('=');
+            params[param[0]] = param[1];
+        }
+
+        // GET ACTIVE USER INFO
+        var waitToken = vm._show();
+        _DLAP.get('getuser2', null, function (response) {
+            vm.user.fill(response.user);
+
+            var payload = {
+                userid: vm.user.id(),
+                privileges: '251658240',
+                select: 'course'
+            };
+
+            if (params['courseId']) {
+                payload['entityid'] = params['courseId'];
+            }
+
+            var waitToken2 = vm._show();
+            _DLAP.get('listuserenrollments', payload, function (response) {
+                if (response.enrollments.hasOwnProperty('enrollment')) {
+                    for (var i = 0; i < response.enrollments.enrollment.length; i++) {
+                        if (response.enrollments.enrollment[i].status === 1) {
+                            var enrollment = new Enrollment();
+                            enrollment.fill(response.enrollments.enrollment[i]);
+                            enrollment.isTeacher(true);
+
+                            if (response.enrollments.enrollment[i].course !== undefined)
+                                enrollment.course.fill(response.enrollments.enrollment[i].course);
+
+                            vm.user.enrollments.push(enrollment);
+                        }
+                    }
+                }
+                vm._hide(waitToken2);
+            });
+
+            vm._hide(waitToken);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Admin Installer</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <!-- KNOCKOUTJS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script type="text/javascript" src="js/lib/ko/knockout-debug.js"></script>
+
+    <!-- XML2JSON -->
+    <script type="text/javascript" src="js/lib/x2js/xml2json.min.js"></script>
+
+    <!-- BOOTFLAT -->
+    <link href="css/site.min.css" rel="stylesheet"/>
+
+    <!--[if lt IE 9]>
+    <script src="lib/lib/html5shiv.lib"></script>
+    <script src="lib/lib/respond.min.lib"></script>
+    <![endif]-->
+
+    <script src="js/site.min.js"></script>
+
+    <!-- PROCTOR FILES -->
+    <link href='https://fonts.googleapis.com/css?family=Kadwa:700' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+        .multiskip-header {
+            font-family: 'Kadwa', serif !important;
+            margin: 15px 0px;
+            text-transform: uppercase;
+            color: #FDB514;
+        }
+
+        .overlay {
+            position: fixed;
+            background: #000;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            /* IE 8 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+            /* IE 5-7 */
+            filter: alpha(opacity=50);
+            /* Netscape */
+            -moz-opacity: 0.5;
+            /* Safari 1.x */
+            -khtml-opacity: 0.5;
+            /* Good browsers */
+            opacity: 0.5;
+        }
+
+        .loading {
+            position: fixed;
+            top: calc(50% - 37px);
+            background: #fff;
+            padding: 16px 10px;
+            border-radius: 50%;
+            left: calc(50% - 37px);
+        }
+
+        body {
+            background-color: rgb(241, 242, 246);
+        }
+    </style>
+
+    <script src="js/DLAP.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 navbar-inverse">
+            <h3 class="multiskip-header">Administration
+                <small>Module Installer</small>
+            </h3>
+        </div>
+    </div>
+    <div class="row" data-bind="visible: domainsList().length === 0">
+        <div class="col-xs-12">
+            <h3 class="text-center">There are no inheritable domains under your current domain.</h3>
+        </div>
+    </div>
+    <div class="row" data-bind="visible: domainsList().length > 0">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Domains</h3>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th style="width: 80px;">ID</th>
+                    <th>Name</th>
+                    <th style="width: 25px;">Enable MultiSkip</th>
+                    <th style="width: 25px;">Enable Proctor</th>
+                    <th style="width: 35px;"></th>
+                </tr>
+                </thead>
+                <tbody data-bind="foreach: domainsList">
+                <tr>
+                    <td data-bind="text: $data.id"></td>
+                    <td data-bind="text: $data.name"></td>
+                    <td align="center"><input type="checkbox" data-bind="checked: $data.installMultiSkip"></td>
+                    <td align="center"><input type="checkbox" data-bind="checked: $data.installProctor"></td>
+                    <td align="center">
+                        <button type="button" class="btn btn-warning" data-bind="click: publish">Publish</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div data-bind="visible: show.overlay()" class="overlay"></div>
+
+<div data-bind="visible: show.loading()" class="loading"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></div>
+
+<script type="text/javascript">
+    // DOMAIN
+    function Domain(init) {
+        var self = this;
+
+        self.id = null,
+                self.name = null,
+                self.parentid = null,
+                self.userspace = null,
+                self.resourceBaseId = null,
+                self.settings = null,
+                self.installMultiSkip = ko.observable(),
+                self.installProctor = ko.observable();
+
+        self.final_settings = function () {
+            return '<settings>' +
+                    '<menuentry-list>' +
+                    '<menuentry id="multiskip" show="' + (self.installMultiSkip() ? "true" : "false") + '" />' +
+                    '<menuentry id="proctor" show="' + (self.installProctor() ? "true" : "false") + '" />' +
+                    '<menuentry id="install" remove-item="true" />' +
+                    '</menuentry-list>' +
+                    '</settings>';
+        }
+
+        self.publish = function () {
+            var publishToken = vm._show();
+            _DLAP.postXml('getdomainsettings', {
+                domainid: self.id,
+                path: 'public/shadow/app/buzz/settings.xml'
+            }, self.final_settings() , function (response) {
+                console.log(response);
+                vm._hide(publishToken);
+            });
+        }
+
+        $.each(init, function (k, v) {
+            if (self.hasOwnProperty(k))
+                self[k] = v;
+
+            if (k == 'id') {
+                var gatherDomainSettings = vm._show();
+
+                _DLAP.get('getdomainsettings', {
+                    domainid: v,
+                    path: 'public/shadow/app/buzz/settings.xml'
+                }, function (response) {
+                    //console.log(response);
+                    self.settings = response.settings;
+
+                    if (self.resourceBaseId && self.resourceBaseId !== self.id) {
+                        if (response.settings.hasOwnProperty('menuentry-list') ||
+                                response.settings['menuentry-list'].hasOwnProperty('menuentry')) {
+                            var installMultiSkip = false;
+                            var installProctor = false;
+                            for (var i = self.settings['menuentry-list'].menuentry.length - 1; i >= 0; i--) {
+                                var point = self.settings['menuentry-list'].menuentry[i];
+
+                                switch (point.id) {
+                                    case 'multiskip':
+                                        installMultiSkip = point['remove-item'] ? false : true;
+                                        break;
+                                    case 'proctor':
+                                        installProctor = point['remove-item'] ? false : true;
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+
+                            self.installMultiSkip(installMultiSkip);
+                            self.installProctor(installProctor);
+                        } else {
+                            self.settings['menuentry-list'] = {
+                                menuentry: []
+                            }
+
+                            self.installMultiSkip(false);
+                            self.installProctor(false);
+                        }
+                    }
+
+                    vm._hide(gatherDomainSettings);
+                });
+            }
+        })
+    }
+
+    // APP VIEWMODEL
+    function AppViewModel() {
+        var self = this;
+
+        // UI RELATED FUNCTIONS
+        self.show = {
+            overlay: ko.observable(false),
+            loading: ko.observable(false),
+            targets: {},
+            reset: function () {
+                self.show.targets = {};
+            },
+            targetStart: function () {
+                var guid = self.guid();
+
+                self.show.targets[guid] = false;
+
+                return guid;
+            },
+            targetEnd: function (guid) {
+                if (self.show.targets[guid] !== undefined)
+                    self.show.targets[guid] = true;
+
+                var hasFinished = true;
+                $.each(self.show.targets, function (k, v) {
+                    if (!v) {
+                        hasFinished = false;
+                        return false;
+                    }
+                });
+
+                if (hasFinished)
+                    self.show.reset();
+
+                return hasFinished;
+            }
+        }
+
+        self._show = function () {
+            self.show.overlay(true);
+            self.show.loading(true);
+
+            return self.show.targetStart();
+        }
+
+        self._hide = function (guid) {
+            if (self.show.targetEnd(guid)) {
+                self.show.overlay(false);
+                self.show.loading(false);
+            }
+        }
+
+        self.guid = function () {
+            return self.s4() + self.s4() + '-' + self.s4() + '-' + self.s4() + '-' +
+                    self.s4() + '-' + self.s4() + self.s4() + self.s4();
+        }
+
+        self.s4 = function () {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+        }
+
+        self._indexOf = function (arr, key, value) {
+            var index = -1;
+
+            for (var i = 0; i < arr.length; i++) {
+                var _split = key.split('.');
+
+                if (_split.length > 1) {
+                    if (arr[i][_split[0]][_split[1]] == value) {
+                        index = i;
+                        break;
+                    }
+                } else {
+                    if (arr[i][key] == value) {
+                        index = i;
+                        break;
+                    }
+                }
+            }
+
+            return index;
+        }
+
+        self.domain = null;
+        self.domainsList = ko.observableArray();
+    }
+
+    var vm = new AppViewModel();
+
+    ko.applyBindings(vm);
+
+    // BUILD PARAMS
+    var params = {};
+    var deconstructed = window.location.href.substring(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < deconstructed.length; i++) {
+        var param = deconstructed[i].split('=');
+        params[param[0]] = param[1];
+    }
+
+    var getDomainToken = vm._show();
+    _DLAP.get('getdomain2', {
+        domainid: '//' + params['userspace']
+    }, function (response) {
+        //console.log(response);
+
+        vm.domain = new Domain(response.domain);
+
+        var getDomainListingToken = vm._show();
+        _DLAP.get('listdomains', {
+            domainid: vm.domain.id
+        }, function (response) {
+            //console.log(response);
+
+            if (response.domains.hasOwnProperty('domain') && response.domains.domain.length > 0) {
+                $.each(response.domains.domain, function (i, v) {
+                    v['resourceBaseId'] = vm.domain.id;
+                    vm.domainsList.push(new Domain(v));
+                })
+            }
+
+            vm._hide(getDomainListingToken);
+        })
+
+        vm._hide(getDomainToken);
+    });
+</script>
+</body>
+</html>
