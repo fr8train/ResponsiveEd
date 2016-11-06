@@ -1,51 +1,22 @@
-﻿<!DOCTYPE html>
-
-<html ng-app="proctorApp">
+<!DOCTYPE html>
+<html lang="en" ng-app="proctor">
 <head>
-    <meta charset="utf-8" />
+    <base href="/ResponsiveEd/Proctor/">
+    <meta charset="UTF-8">
     <title>Proctor</title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
     <!-- BOOTFLAT -->
-    <link href="css/site.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/site.css">
 
-    <!--[if lt IE 9]>
-    <script src="lib/html5shiv.lib"></script>
-    <script src="lib/respond.min.lib"></script>
-    <![endif]-->
-
-    <script src="lib/site.min.js"></script>
-
-    <!-- ANGULAR 1.5 -->
+    <!-- ANGULAR -->
     <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
 
-    <!-- ENUM -->
-    <script src="enum/roles.js"></script>
+    <!-- PROCTOR -->
+    <script src="app.js"></script>
 
-    <!-- MODELS -->
-    <script src="models/user.js"></script>
-
-    <!-- APP ANGULAR BOOTSTRAPPING -->
-    <script src="proctor.module.js"></script>
-
-    <!-- TEACHER COMPONENTS -->
-    <script src="controllers/teacher/dashboard.controller.js"></script>
-    <script src="components/teacher/dashboard.component.js"></script>
-
-    <!-- STUDENT COMPONENTS -->
-    <script src="controllers/student/dashboard.controller.js"></script>
-    <script src="components/student/dashboard.component.js"></script>
-
-    <!-- PROCTOR FILES -->
+    <!-- PROCTOR STYLES -->
     <link href='https://fonts.googleapis.com/css?family=Kadwa:700' rel='stylesheet' type='text/css'>
 
     <style type="text/css">
@@ -60,34 +31,8 @@
             height: 100%;
         }
     </style>
-
-    <script src="lib/DLAP.js"></script>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 navbar-inverse">
-                <h3 class="proctor-header">Proctor</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid" style="height: calc(100% - 63px); display: none;">
-        <div class="row" style="height: 100%">
-            <div class="col-xs-12 text-center" style="margin-top: 240px;">
-                <h3>You must select an active course in order to use Proctor.</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid" ng-view></div>
-
-    <script type="text/javascript">
-        function isset(variable) {
-            return typeof variable !== "undefined" && (variable ? true : false);
-        }
-
-
-    </script>
+<proctor></proctor>
 </body>
 </html>
