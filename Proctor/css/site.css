@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .index .adpacks {
 	margin: 0 auto 100px;
-	padding: 15px;
+	padding: 9px 9px 18px;
 	border-radius: 3px;
 	border: 1px solid #3bafda;
 	width: 380px;
@@ -106,6 +106,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .index .adpacks .adpacks-poweredby {
 	display: block;
+	margin-bottom:9px;
 }
 @media (max-width: 767px) {
     .index {
@@ -261,31 +262,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     }
 }
 /* ----------------------------------
- * advertisement
- * ---------------------------------- */
-.advertisement {
-  padding: 15px;
-  width: auto !important;
-  overflow: hidden; /* clearfix */
-  text-align: left;
-  border: 1px solid #a4e4ef !important;
-  border-radius: 4px;
-}
-@media (max-width: 767px) {
-  .advertisement {
-    position: static;
-    margin: 30px 0;
-  }
-}
-@media (min-width: 768px) {
-  .advertisement {
-    position: absolute;
-    top: 15px;
-    right: 15px; /* 15px instead of 0 since box-sizing */
-    width: 380px !important;
-  }
-}
-/* ----------------------------------
  * navbar
  * ---------------------------------- */
 .navbar-custom {
@@ -395,25 +371,64 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding: 10px 16px;
     text-decoration: none;
 }
-.topic .container a.adpacks-img {
-	float: left;
-	width: 140px;
-}
-.topic .container a.adpacks-text {
-	font-size: 13px;
-	line-height: 16px !important;
-	text-decoration: none;
-}
-.topic .container a.adpacks-poweredby {
-	display: block;
-	font-size: 13px;
-	line-height: 16px !important;
-	text-decoration: none;
-	color: #c5f5fe;
-}
 .topic .github {
     position: relative;
     top: 10px;
+}
+/* ----------------------------------
+ * advertisement
+ * ---------------------------------- */
+.advertisement {
+  padding: 5px;
+  width: auto !important;
+  overflow: hidden; /* clearfix */
+  text-align: left;
+  border: 1px solid #a4e4ef !important;
+  border-radius: 4px;
+}
+@media (max-width: 767px) {
+  .advertisement {
+    position: static;
+    margin: 30px 0;
+  }
+}
+@media (min-width: 768px) {
+  .advertisement {
+    position: absolute;
+    top: 15px;
+    right: 15px; /* 15px instead of 0 since box-sizing */
+    width: 380px !important;
+  }
+}
+.carbon-wrap {
+	display:block;
+	height:100px;
+	line-height:15px;
+	overflow:hidden;
+}
+.carbon-img{
+	border:none;
+	display:inline;
+	float:left;
+	height:100px;
+	margin:4px 9px 9px 0;
+	width:130px
+}
+.carbon-text{
+	display:inline;
+	float:left;
+	width:162px;
+	color:#000;
+	text-decoration:none !important;
+	text-transform:none;
+	font-size:11px !important
+}
+.carbon-poweredby {
+	float: right;
+	text-align:center;
+	color:#999
+	text-decoration:none !important;
+	font-size:11px !important
 }
 /* ----------------------------------
  * documents
