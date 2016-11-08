@@ -2,15 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a0313d9-83d5-4d32-9da1-9e989bbb265a" name="Default" comment="Working on Teacher layout">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/views/teacher/dashboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/views/teacher/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/components/teacher.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/app.js" afterPath="$PROJECT_DIR$/Proctor/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/Proctor/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/Jumbotron.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/ascii-logo.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/bootflat-ui-kit.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/design.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/divider.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/fast.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/feature-bootstrap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/feature-css.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/feature-lightweight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/feature-mobile.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/footer-logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/github.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/index.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/logo-index.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/photo-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/photo-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/photo-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/photo-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/prototyping.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/share.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/slider1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/slider2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/slider3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/thumbnail-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/thumbnail-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/thumbnail-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/thumbnail-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/together.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/img/wild_flowers.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/views/teacher/review.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/views/teacher/syllabus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/Proctor/js/bootstrap.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/index.html" afterPath="$PROJECT_DIR$/Proctor/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/app/views/index.html" afterPath="$PROJECT_DIR$/Proctor/app/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/css/site.css" afterPath="$PROJECT_DIR$/Proctor/css/site.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/css/site.min.css" afterPath="$PROJECT_DIR$/Proctor/css/site.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/app/views/teacher/index.html" afterPath="$PROJECT_DIR$/Proctor/app/views/teacher/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/app/components/teacher.js" afterPath="$PROJECT_DIR$/Proctor/app/components/teacher.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ResponsiveEd.iws" />
@@ -36,19 +64,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proctor/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.666666">
-              <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+            <state vertical-scroll-proportion="-27.444445">
+              <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="site.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Proctor/css/site.css">
+      <file leaf-file-name="teacher.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Proctor/app/components/teacher.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.117263846">
-              <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-              <folding />
+            <state vertical-scroll-proportion="0.48387095">
+              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#39#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,34 +95,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacher.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proctor/app/components/teacher.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#39#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proctor/app/views/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0">
-              <caret line="3" column="58" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
-              <folding>
-                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -101,11 +105,44 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.666667">
+              <caret line="19" column="73" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
+              <folding>
+                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-3.3333333">
-              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+              <caret line="5" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="review.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/review.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0">
+              <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="syllabus.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/syllabus.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0">
+              <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -116,8 +153,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Html5" />
         <option value="JavaScript File" />
+        <option value="Html5" />
       </list>
     </option>
   </component>
@@ -154,13 +191,15 @@
         <option value="$PROJECT_DIR$/Proctor/proctor.module.js" />
         <option value="$PROJECT_DIR$/Proctor/package.json" />
         <option value="$PROJECT_DIR$/Proctor/app/components/teacherDashboard.js" />
-        <option value="$PROJECT_DIR$/Proctor/app/components/teacher.js" />
         <option value="$PROJECT_DIR$/Proctor/app.js" />
-        <option value="$PROJECT_DIR$/Proctor/app/views/index.html" />
-        <option value="$PROJECT_DIR$/Proctor/app/views/teacher/index.html" />
-        <option value="$PROJECT_DIR$/Proctor/index.html" />
         <option value="$PROJECT_DIR$/Proctor/app/views/teacher/dashboard.html" />
         <option value="$PROJECT_DIR$/Proctor/css/site.css" />
+        <option value="$PROJECT_DIR$/Proctor/index.html" />
+        <option value="$PROJECT_DIR$/Proctor/app/views/index.html" />
+        <option value="$PROJECT_DIR$/Proctor/app/views/teacher/review.html" />
+        <option value="$PROJECT_DIR$/Proctor/app/views/teacher/syllabus.html" />
+        <option value="$PROJECT_DIR$/Proctor/app/views/teacher/index.html" />
+        <option value="$PROJECT_DIR$/Proctor/app/components/teacher.js" />
       </list>
     </option>
   </component>
@@ -204,6 +243,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -251,6 +292,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ResponsiveEd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ResponsiveEd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proctor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -344,8 +403,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -416,16 +473,21 @@
       <option name="project" value="LOCAL" />
       <updated>1478406454020</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Working on Teacher layout">
+      <created>1478498511487</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1478498511487</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="24" width="1871" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22465754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22739726" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -434,6 +496,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -468,6 +531,69 @@
     <entry file="file://$PROJECT_DIR$/Proctor/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/css/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/app/components/teacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/app/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="58" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding />
         </state>
@@ -495,11 +621,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -631,6 +753,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.777779">
           <caret line="132" column="14" selection-start-line="127" selection-start-column="4" selection-end-line="132" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/css/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -645,25 +774,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proctor/app/components/teacher.js">
+    <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/review.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-2.0">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proctor/index.html">
+    <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/syllabus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.666666">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        <state vertical-scroll-proportion="-2.0">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3333333">
+          <caret line="5" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.666667">
+          <caret line="19" column="73" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/app/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -671,31 +817,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proctor/app/views/index.html">
+    <entry file="file://$PROJECT_DIR$/Proctor/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0">
-          <caret line="3" column="58" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+        <state vertical-scroll-proportion="-27.444445">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/app/components/teacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48387095">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
-            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proctor/app/views/teacher/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3333333">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proctor/css/site.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.117263846">
-          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
