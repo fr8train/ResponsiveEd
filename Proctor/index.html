@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="proctor">
+<html lang="en">
 <head>
     <!-- <base href="/ResponsiveEd/Proctor/"> -->
     <meta charset="UTF-8">
@@ -17,11 +17,16 @@
 
     <!-- ANGULAR -->
     <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 
     <!-- PROCTOR -->
     <script src="app.js"></script>
-    <script src="app/components/teacher.js"></script>
+    <script src="routing.js"></script>
+
+    <script src="app/teacher/teacher.module.js"></script>
+    <script src="app/teacher/components/dashboard/dashboard.component.js"></script>
+    <script src="app/teacher/components/review/review.component.js"></script>
+    <script src="app/teacher/components/syllabus/syllabus.component.js"></script>
 
     <!-- PROCTOR STYLES -->
     <link href='https://fonts.googleapis.com/css?family=Kadwa:700' rel='stylesheet' type='text/css'>
@@ -37,8 +42,8 @@
             height: 100%;
         }
 
-        .no-margin {
-            margin: 0;
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
         }
         
         .glyphicon {
@@ -46,7 +51,7 @@
         }
     </style>
 </head>
-<body>
-<proctor></proctor>
+<body ng-app="proctor">
+<ui-view></ui-view>
 </body>
 </html>

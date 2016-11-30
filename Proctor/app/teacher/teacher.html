@@ -8,18 +8,24 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="navbar-brand">
-                <h4 class="proctor-header" style="margin: 0; font-size: 22px;">Proctor</h4>
+                <h4 class="proctor-header" style="font-size: 22px;">Proctor</h4>
             </div>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="proctor-menu">
             <ul class="nav navbar-nav">
-                <li ng-class="{ active: $ctrl._path == '/teacher' }"><a ng-link="['TeacherDashboard']"><i class="glyphicon glyphicon-dashboard"></i>Dashboard</a></li>
-                <li ng-class="{ active: $ctrl._path == '/teacher/review' }"><a ng-link="['TeacherReview']"><i class="glyphicon glyphicon-check"></i> Review</a></li>
-                <li ng-class="{ active: $ctrl._path == '/teacher/syllabus' }"><a ng-link="['TeacherSyllabus']"><i class="glyphicon glyphicon-folder-open"></i> Syllabus</a></li>
+                <li ui-sref-active="active"><a ui-sref="teacher.dashboard"><i class="glyphicon glyphicon-dashboard"></i>Dashboard</a></li>
+                <li ui-sref-active="active"><a ui-sref="teacher.review"><i class="glyphicon glyphicon-check"></i> Review</a></li>
+                <li ui-sref-active="active"><a ui-sref="teacher.syllabus"><i class="glyphicon glyphicon-folder-open"></i> Syllabus</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div>
 </nav>
-<ng-outlet></ng-outlet>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <ui-view></ui-view>
+        </div>
+    </div>
+</div>
