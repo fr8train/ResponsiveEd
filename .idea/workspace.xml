@@ -2,33 +2,370 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a0313d9-83d5-4d32-9da1-9e989bbb265a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/teacher/components/dashboard/dashboard.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/teacher/components/dashboard/dashboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/teacher/components/review/review.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/teacher/components/review/review.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/teacher/components/syllabus/syllabus.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/teacher/components/syllabus/syllabus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/teacher/teacher.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/app/teacher/teacher.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/routing.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/app/components/teacher.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/app/views/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/app/views/teacher/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/app/views/teacher/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/app/views/teacher/review.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/app/views/teacher/syllabus.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/node_modules/@angular/router/angular1/angular_1_router.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/node_modules/@angular/router/angular1/ng_route_shim.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/node_modules/@angular/router/angular2/router.dev.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/node_modules/@angular/router/angular2/router.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/node_modules/@angular/router/angular2/router.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Proctor/node_modules/@angular/router/package.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ResponsiveEd.iml" afterPath="$PROJECT_DIR$/.idea/ResponsiveEd.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/common.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/common.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/common.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/coreservices.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/coreservices.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/coreservices.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/glob.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/glob.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/glob.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/hof.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/hof.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/hof.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/module.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/predicates.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/predicates.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/predicates.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/queue.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/queue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/queue.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/strings.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/strings.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/strings.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/trace.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/trace.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/common/trace.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/core.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/core.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/globals.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/globals.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/globals.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/lazyLoadStates.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/lazyLoadStates.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/lazyLoadStates.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/onEnterExitRetain.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/onEnterExitRetain.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/onEnterExitRetain.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/redirectTo.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/redirectTo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/redirectTo.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/resolve.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/resolve.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/resolve.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/url.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/url.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/url.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/views.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/views.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/hooks/views.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/directives/stateDirectives.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/directives/stateDirectives.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/directives/stateDirectives.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/directives/viewDirective.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/directives/viewDirective.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/directives/viewDirective.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/legacy/resolveService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/legacy/resolveService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/legacy/resolveService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/legacy/stateEvents.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/legacy/stateEvents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/legacy/stateEvents.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/services.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/services.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/services.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/stateFilters.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/stateFilters.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/stateFilters.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/stateProvider.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/stateProvider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/stateProvider.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/statebuilders/onEnterExitRetain.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/statebuilders/onEnterExitRetain.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/statebuilders/onEnterExitRetain.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/statebuilders/views.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/statebuilders/views.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/statebuilders/views.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/templateFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/templateFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/templateFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/viewScroll.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/viewScroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/ng1/viewScroll.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/module.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/param.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/param.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/param.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/paramTypes.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/paramTypes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/paramTypes.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/stateParams.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/stateParams.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/stateParams.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/type.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/type.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/params/type.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/path/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/path/module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/path/module.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/path/node.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/path/node.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/path/node.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/path/pathFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/path/pathFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/path/pathFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/module.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/resolvable.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/resolvable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/resolvable.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/resolveContext.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/resolveContext.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/resolve/resolveContext.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/router.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/router.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/module.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateBuilder.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateBuilder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateBuilder.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateMatcher.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateMatcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateMatcher.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateObject.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateObject.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateObject.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateQueueManager.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateQueueManager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateQueueManager.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateRegistry.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateRegistry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateRegistry.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/stateService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/targetState.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/targetState.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/state/targetState.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/hookBuilder.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/hookBuilder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/hookBuilder.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/hookRegistry.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/hookRegistry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/hookRegistry.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/module.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/rejectFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/rejectFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/rejectFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/transition.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/transition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/transition.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/transitionHook.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/transitionHook.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/transitionHook.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/transitionService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/transitionService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/transition/transitionService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/module.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlMatcher.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlMatcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlMatcher.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlMatcherConfig.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlMatcherConfig.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlMatcherConfig.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlMatcherFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlMatcherFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlMatcherFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlRouter.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlRouter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/url/urlRouter.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/view/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/view/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/view/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/view/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/view/module.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/view/module.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/view/view.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/view/view.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/commonjs/view/view.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/angular-ui-router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/angular-ui-router.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/angular-ui-router.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/angular-ui-router.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/common/common.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/common/coreservices.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/common/glob.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/common/hof.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/common/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/common/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/common/predicates.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/common/queue.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/common/strings.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/common/trace.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/core.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/globals.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/hooks/lazyLoadStates.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/hooks/onEnterExitRetain.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/hooks/redirectTo.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/hooks/resolve.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/hooks/url.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/hooks/views.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/directives/stateDirectives.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/directives/viewDirective.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/legacy/resolveService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/legacy/stateEvents.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/services.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/stateFilters.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/stateProvider.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/statebuilders/onEnterExitRetain.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/statebuilders/views.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/templateFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/ng1/viewScroll.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/params/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/params/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/params/param.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/params/paramTypes.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/params/stateParams.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/params/type.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/path/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/path/node.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/path/pathFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/resolve/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/resolve/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/resolve/resolvable.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/resolve/resolveContext.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/router.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/state/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/state/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/state/stateBuilder.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/state/stateMatcher.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/state/stateObject.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/state/stateQueueManager.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/state/stateRegistry.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/state/stateService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/state/targetState.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/stateEvents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/stateEvents.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/stateEvents.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/stateEvents.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/transition/hookBuilder.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/transition/hookRegistry.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/transition/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/transition/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/transition/rejectFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/transition/transition.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/transition/transitionHook.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/transition/transitionService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/url/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/url/urlMatcher.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/url/urlMatcherConfig.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/url/urlMatcherFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/url/urlRouter.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/view/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/view/module.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/release/view/view.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/common/common.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/common/coreservices.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/common/glob.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/common/hof.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/common/interface.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/common/module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/common/predicates.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/common/queue.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/common/strings.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/common/trace.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/core.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/globals.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/hooks/lazyLoadStates.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/hooks/onEnterExitRetain.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/hooks/redirectTo.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/hooks/resolve.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/hooks/url.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/hooks/views.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/directives/stateDirectives.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/directives/viewDirective.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/interface.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/legacy/resolveService.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/legacy/stateEvents.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/services.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/stateFilters.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/stateProvider.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/statebuilders/onEnterExitRetain.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/statebuilders/views.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/templateFactory.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/ng1/viewScroll.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/params/interface.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/params/module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/params/param.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/params/paramTypes.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/params/stateParams.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/params/type.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/path/module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/path/node.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/path/pathFactory.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/resolve/interface.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/resolve/module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/resolve/resolvable.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/resolve/resolveContext.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/router.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/state/interface.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/state/module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/state/stateBuilder.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/state/stateMatcher.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/state/stateObject.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/state/stateQueueManager.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/state/stateRegistry.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/state/stateService.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/state/targetState.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/transition/hookBuilder.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/transition/hookRegistry.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/transition/interface.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/transition/module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/transition/rejectFactory.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/transition/transition.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/transition/transitionHook.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/transition/transitionService.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/url/module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/url/urlMatcher.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/url/urlMatcherConfig.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/url/urlMatcherFactory.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/url/urlRouter.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/view/interface.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/view/module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Proctor/node_modules/angular-ui-router/src/view/view.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/app.js" afterPath="$PROJECT_DIR$/Proctor/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/index.html" afterPath="$PROJECT_DIR$/Proctor/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proctor/package.json" afterPath="$PROJECT_DIR$/Proctor/package.json" />
     </list>
     <ignored path="ResponsiveEd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,41 +385,7 @@
     <favorites_list name="ResponsiveEd" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proctor/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="40" column="20" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="teacher.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Proctor/app/teacher/teacher.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="30" column="6" lean-forward="false" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proctor/app/teacher/components/dashboard/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -162,9 +465,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="49" />
-    <option name="y" value="52" />
-    <option name="width" value="1279" />
-    <option name="height" value="1027" />
+    <option name="y" value="24" />
+    <option name="width" value="1871" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -183,6 +486,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -197,7 +501,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,7 +531,16 @@
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ResponsiveEd/Proctor/index.html">
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -242,6 +554,10 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
@@ -253,6 +569,26 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
       <method />
     </configuration>
     <list size="1">
@@ -279,7 +615,8 @@
       <updated>1477117090580</updated>
       <workItem from="1480469075856" duration="29000" />
       <workItem from="1480469150912" duration="6000" />
-      <workItem from="1480470318292" duration="27000" />
+      <workItem from="1480470318292" duration="92000" />
+      <workItem from="1480487505365" duration="20000" />
     </task>
     <task id="LOCAL-00001" summary="Working on Proctor, getting routing set up">
       <created>1478406454020</created>
@@ -302,23 +639,30 @@
       <option name="project" value="LOCAL" />
       <updated>1478583933982</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Working on Teacher layout - menus">
+      <created>1480470361902</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1480470361902</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62000" />
+    <option name="totallyTimeSpent" value="147000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="52" width="1279" height="1027" extended-state="4" />
+    <frame x="49" y="24" width="1871" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3755069" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2558904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39289558" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3810021" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -390,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -405,10 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="23" column="6" lean-forward="false" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -430,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -459,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="44" column="29" lean-forward="false" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -474,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -496,7 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -518,7 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,19 +1038,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proctor/app/teacher/components/dashboard/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proctor/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="40" column="20" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,10 +1049,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="30" column="6" lean-forward="false" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proctor/app/teacher/components/dashboard/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
         </state>
       </provider>
     </entry>
