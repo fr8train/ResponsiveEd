@@ -8,6 +8,14 @@ angular.module('proctor')
                 .state('root', {
                     url: '/'
                 })
+                .state('401', {
+                    url: '/unauthorized',
+                    templateUrl: 'app/views/unauthorized.html'
+                })
+                .state('400', {
+                    url: '/missingEnrollmentId',
+                    templateUrl: 'app/views/missingEnrollmentId.html'
+                })
                 .state('teacher', {
                     component: 'teacher.component'
                 })
@@ -27,10 +35,9 @@ angular.module('proctor')
             $urlRouterProvider.otherwise('/');
         }
     ])
-    .run(['$state', '$transitions', '$rootScope', function ($state, $transitions, $rootScope) {
+    .run(['$state', '$transitions', 'PersonService', function ($state, $transitions, PersonService) {
         $transitions.onBefore({to: 'root'}, function (transition) {
-            console.log(window.location.href);
-            console.log(transition.$to());
-            return transition.router.stateService.target('teacher.dashboard');
-        })
+            PersonService.parseHref(window.location.href).loadCurrentUser();
+            return transition.router.stateService.target(PersonService.determineStateResolution());
+        });
     }]);
