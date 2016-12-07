@@ -4,27 +4,27 @@
 
 function MissingAuthTokenError() {
     this.name = 'MissingAuthTokenError';
-    this.message = 'You cannot complete a DLAP call without a valid Auth Token. Please try logging back in.';
+    this.message = 'You cannot complete a services call without a valid Auth Token. Please try logging back in.';
 }
 
 MissingAuthTokenError.prototype = Error.prototype;
 
 function TransmissionFailedError(code) {
     this.name = 'TransmissionFailedError';
-    this.message = 'Transmitting to the DLAP API resulted in an HTTP ' + code;
+    this.message = 'Transmitting to the services API resulted in an HTTP ' + code;
 }
 
 TransmissionFailedError.prototype = Error.prototype;
 
 function DLAPFailedError(message) {
     this.name = "DLAPFailedError";
-    this.message = "DLAP Returned Error: " + message;
+    this.message = "services Returned Error: " + message;
 }
 
 DLAPFailedError.prototype = Error.prototype;
 
 /*
- DLAP IMPLEMENTATION
+ services IMPLEMENTATION
  */
 
 function DLAP() {
@@ -129,7 +129,7 @@ function DLAP() {
 
     // OVERRIDE METHODS
     this.toString = function () {
-        return '[object DLAP]';
+        return '[object services]';
     }
 
     // INITIALIZATION

@@ -4,5 +4,6 @@
 
 angular.module('proctor', [
     'teacher',
-    'ui.router'
+    'ui.router',
+    'DLAP'
 ]);

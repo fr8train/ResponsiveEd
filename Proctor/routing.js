@@ -37,7 +37,7 @@ angular.module('proctor')
     ])
     .run(['$state', '$transitions', 'PersonService', function ($state, $transitions, PersonService) {
         $transitions.onBefore({to: 'root'}, function (transition) {
-            PersonService.parseHref(window.location.href).loadCurrentUser();
-            return transition.router.stateService.target(PersonService.determineStateResolution());
+            PersonService.parseHref().loadCurrentUser();
+            return $state.target(PersonService.determineStateResolution());
         });
     }]);
