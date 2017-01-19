@@ -3,5 +3,5 @@
  */
 angular.module('teacher')
     .component('teacher.dashboard.component', {
-        templateUrl: 'app/teacher/components/dashboard/dashboard.html'
-    })
+        templateUrl: 'app/components/teacher/dashboard/dashboard.html'
+    });

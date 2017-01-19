@@ -29,6 +29,7 @@
     <script src="app/components/teacher/teacher.module.js"></script>
     <script src="app/components/teacher/dashboard/dashboard.component.js"></script>
     <script src="app/components/teacher/review/review.component.js"></script>
+    <script src="app/components/teacher/syllabus/syllabus.controller.js"></script>
     <script src="app/components/teacher/syllabus/syllabus.component.js"></script>
     <script src="app/utilities/components/ui.components.js"></script>
 
@@ -58,5 +59,12 @@
 </head>
 <body ng-app="proctor">
 <ui-view></ui-view>
+<script type="text/javascript">
+    $(document).on('click','.navbar-collapse.in',function(e) {
+        if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+            $(this).collapse('hide');
+        }
+    });
+</script>
 </body>
 </html>

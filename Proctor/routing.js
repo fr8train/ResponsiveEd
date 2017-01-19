@@ -37,7 +37,22 @@ angular.module('proctor')
     ])
     .run(['$state', '$transitions', 'PersonService', function ($state, $transitions, PersonService) {
         $transitions.onBefore({to: 'root'}, function (transition) {
-            PersonService.parseHref().loadCurrentUser();
-            return $state.target(PersonService.determineStateResolution());
+            PersonService.parseHref().loadCurrentUser(function () {
+                $state.transitionTo(PersonService.determineStateResolution());
+            });
+            return false;
         });
+
+        function DefaultReroute(transition) {
+            if (!PersonService.user.enrollment.id) {
+                $state.transitionTo('root');
+                return false;
+            }
+
+            return true;
+        }
+
+        $transitions.onBefore({to: 'teacher.dashboard'}, DefaultReroute);
+        $transitions.onBefore({to: 'teacher.review'}, DefaultReroute);
+        $transitions.onBefore({to: 'teacher.syllabus'}, DefaultReroute);
     }]);

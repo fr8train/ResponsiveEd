@@ -3,5 +3,6 @@
  */
 angular.module('teacher')
     .component('teacher.syllabus.component', {
-        templateUrl: 'app/teacher/components/syllabus/syllabus.html'
-    })
+        templateUrl: 'app/components/teacher/syllabus/syllabus.html',
+        controller: SyllabusController
+    });

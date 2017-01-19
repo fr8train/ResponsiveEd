@@ -3,5 +3,5 @@
  */
 angular.module('teacher',[])
     .component('teacher.component', {
-        templateUrl: 'app/teacher/teacher.html'
+        templateUrl: 'app/components/teacher/teacher.html'
     });

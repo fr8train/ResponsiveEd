@@ -32,19 +32,21 @@ angular.module('proctor')
             var index = url.indexOf('enrollmentId');
             DlapService.init(url);
             user.enrollment.id = index >= 0 ? url.substring(index + 'enrollmentId='.length, url.indexOf('#', index)) : user.enrollment.id;
+
             return this;
         };
 
-        var loadCurrentUser = function () {
+        var loadCurrentUser = function (callback) {
             if (user.enrollment.id) {
-                DlapService.get('getenrollment3', {enrollmentid: this.user.enrollment.id}, function (response) {
+                DlapService.get('getenrollment3', {enrollmentid: user.enrollment.id}, function (response) {
                     user.id = response.enrollment.userid;
                     user.enrollment.id = response.enrollment.id;
                     user.enrollment.course.id = response.enrollment.courseid;
                     user.enrollment.isTeacher = determineIsTeacherFromRights(response.enrollment.privileges);
+
+                    if (angular.isFunction(callback)) callback();
                 })
             }
-            return this;
         };
 
         var determineStateResolution = function () {
@@ -59,7 +61,7 @@ angular.module('proctor')
         };
 
         return {
-            //user: user,
+            user: user,
             parseHref: parseHref,
             loadCurrentUser: loadCurrentUser,
             determineStateResolution: determineStateResolution

@@ -3,5 +3,5 @@
  */
 angular.module('teacher')
     .component('teacher.review.component', {
-        templateUrl: 'app/teacher/components/review/review.html'
-    })
+        templateUrl: 'app/components/teacher/review/review.html'
+    });
