@@ -36,6 +36,9 @@ angular.module('proctor')
         }
     ])
     .run(['$state', '$transitions', 'PersonService', function ($state, $transitions, PersonService) {
+        $state.defaultErrorHandler(function () {
+        });
+
         $transitions.onBefore({to: 'root'}, function (transition) {
             PersonService.parseHref().loadCurrentUser(function () {
                 $state.transitionTo(PersonService.determineStateResolution());
@@ -45,8 +48,7 @@ angular.module('proctor')
 
         function DefaultReroute(transition) {
             if (!PersonService.user.enrollment.id) {
-                $state.transitionTo('root');
-                return false;
+                return $state.target('root');
             }
 
             return true;
