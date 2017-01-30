@@ -46,6 +46,8 @@ angular.module('proctor')
 
                     if (angular.isFunction(callback)) callback();
                 })
+            } else {
+                if (angular.isFunction(callback)) callback();
             }
         };
 

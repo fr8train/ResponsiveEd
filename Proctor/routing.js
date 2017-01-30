@@ -39,21 +39,23 @@ angular.module('proctor')
         $state.defaultErrorHandler(function () {
         });
 
-        $transitions.onBefore({to: 'root'}, function (transition) {
-            PersonService.parseHref().loadCurrentUser(function () {
-                $state.transitionTo(PersonService.determineStateResolution());
-            });
-            return false;
-        });
-
         function DefaultReroute(transition) {
             if (!PersonService.user.enrollment.id) {
-                return $state.target('root');
-            }
+                PersonService.parseHref().loadCurrentUser(function () {
+                    $state.transitionTo(PersonService.determineStateResolution());
+                });
 
-            return true;
+                return false;
+            } else {
+                if (transition.$to.name == 'root') {
+                    return $state.target(PersonService.determineStateResolution());
+                } else {
+                    return true;
+                }
+            }
         }
 
+        $transitions.onBefore({to: 'root'}, DefaultReroute);
         $transitions.onBefore({to: 'teacher.dashboard'}, DefaultReroute);
         $transitions.onBefore({to: 'teacher.review'}, DefaultReroute);
         $transitions.onBefore({to: 'teacher.syllabus'}, DefaultReroute);

@@ -1,1 +1,26 @@
-<h3>Syllabus</h3>
+<h3>Syllabus
+    <small>Assessment Configuration</small>
+</h3>
+<em style="margin-bottom: 15px;">This is where you may indicate which gradable item in a syllabus folder you consider to
+    be a Proctored Assessment and assign gradable dependencies from within that same folder. Proctored Assessments with
+    dependencies will require the students to complete all of the dependent gradable items before the teacher will be
+    notified that a student is ready to take a Proctored Assessment.</em>
+<div class="row">
+    <div class="col-xs-6" ng-repeat="grouping in $ctrl.groupings track by grouping.itemId">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">{{ ::grouping.itemName }}</h4>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h5>
+                            <strong></strong>
+                        </h5>
+                    </div>
+                    <div class="col-xs-6"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
