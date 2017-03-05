@@ -73,8 +73,12 @@ function Item(data, parent) {
     this.name = data.data && data.data.title ? data.data.title.$value : "NO NAME";
 
     this.addDependency = function () {
-        parent.dependencies.push(this);
-        parent.$scope.needToSave = true;
+        if (parent.dependencies.filter(function (i) {
+                return i === this;
+            }.bind(this)).length === 0) {
+            parent.dependencies.push(this);
+            parent.$scope.needToSave = true;
+        }
     };
     
     this.removeDependency = function () {
