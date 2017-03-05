@@ -1,28 +1,68 @@
+<div class="row" ng-if="needToSave">
+    <div class="col-xs-12">
+        <div class="alert alert-warning">
+            <h4>Heads up!</h4>
+            <p>We've detected that you changed something and you will need to save your changes.</p>
+            <p><a class="btn btn-warning" ng-click="$ctrl.saveChanges()">Save my changes</a></p>
+        </div>
+    </div>
+</div>
 <h3>Syllabus
     <small>Assessment Configuration</small>
 </h3>
-<em style="margin-bottom: 15px;">This is where you may indicate which gradable item in a syllabus folder you consider to
+<em style="margin-bottom: 15px; display: block;">This is where you may indicate which gradable item in a syllabus folder you consider to
     be a Proctored Assessment and assign gradable dependencies from within that same folder. Proctored Assessments with
     dependencies will require the students to complete all of the dependent gradable items before the teacher will be
     notified that a student is ready to take a Proctored Assessment.</em>
 <div class="row">
-    <div class="col-xs-6" ng-repeat="grouping in $ctrl.groupings track by grouping.itemId">
+    <div class="col-xs-6"
+         style="float: none !important; display: inline-block;"
+         ng-repeat="grouping in $ctrl.groupings track by grouping.itemId">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">{{ ::grouping.itemName }}</h4>
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <select name="selecter_basic" data-selecter-options='{"cover":"true"}'>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                            <option value="4">Four</option>
-                            <option value="5">Five</option>
-                        </select>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Proctored Assessment</label>
+                            <select class="form-control" ng-model="grouping.target" ng-options="item.id as item.name for item in grouping.items track by item.id">
+                                <option value=""></option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-xs-6"></div>
+                    <div class="col-xs-12">
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label>Dependencies</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="btn-group pull-right">
+                                        <button ng-disabled="!grouping.target" type="button" class="btn btn-xs btn-warning dropdown-toggle" data-toggle="dropdown">
+                                            Add <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li ng-repeat="item in grouping.items track by item.id">
+                                                <a ng-click="item.addDependency()">{{ ::item.name }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="margin-top: 0">
+                            <div style="margin-bottom: 10px;"
+                                 ng-repeat="dependency in grouping.dependencies | orderBy: 'id' track by dependency.id">
+                                {{ ::dependency.name }}
+                                <button type="button"
+                                        ng-click="dependency.removeDependency()"
+                                        class="btn btn-xs btn-warning pull-right">
+                                    Remove
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
