@@ -2,20 +2,11 @@
  * Created by tyler on 1/18/2017.
  */
 
-function SyllabusController(PersonService, DlapService, $scope) {
+function SyllabusController($scope) {
     var self = this;
     self.name = 'SyllabusController';
-    self.personService = PersonService;
-    self.dlapService = DlapService;
     self.groupings = [];
     $scope.needToSave = false;
-
-    self.getManifest = function () {
-        DlapService.get('getmanifest',{entityid: PersonService.user.enrollment.course.id}, function (response) {
-            if (response.manifest.item.length)
-                self.analyzeManifestNode(response.manifest.item[0]);
-        });
-    };
 
     self.analyzeManifestNode = function (node) {
         if (node.item && node.item.length) {
@@ -39,7 +30,7 @@ function SyllabusController(PersonService, DlapService, $scope) {
         $scope.needToSave = false;
     };
 
-    self.getManifest();
+    if (this.manifest && this.manifest.item.length) self.analyzeManifestNode(this.manifest.item[0]);
 }
 
 function ItemDependencyGrouping(data, $scope) {

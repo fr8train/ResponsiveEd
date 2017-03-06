@@ -37,7 +37,7 @@ angular.module('DLAP', [])
 
         var __response = function (response, callback) {
             if (response.status == 200) {
-                __callback(response.data, callback);
+                return __callback(response.data, callback);
             }
             else
                 throw new TransmissionFailedError(response.status);
@@ -47,13 +47,17 @@ angular.module('DLAP', [])
             if (typeof data != 'string') {
                 if (data.response.code == "OK") {
                     if (callback)
-                        callback(data.response);
+                        return callback(data.response);
+                    else
+                        return data.response;
                 } else {
                     throw new DLAPFailedError(data.response.message);
                 }
             } else {
                 if (callback)
-                    callback(data.responseText);
+                    return callback(data.responseText);
+                else
+                    return data.responseText;
             }
         };
 
@@ -78,7 +82,7 @@ angular.module('DLAP', [])
 
                 attributes['_token'] = token;
 
-                $http({
+                return $http({
                     method: 'GET',
                     url: __uri(command),
                     params: attributes,
@@ -87,7 +91,7 @@ angular.module('DLAP', [])
                         'Accept': 'application/json'
                     }
                 }).then(function (response) {
-                        __response(response, callback);
+                        return __response(response, callback);
                     },
                     function (response) {
                         throw new TransmissionFailedError(response.status)

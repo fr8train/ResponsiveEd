@@ -3,6 +3,9 @@
  */
 angular.module('teacher')
     .component('teacher.syllabus.component', {
-        templateUrl: 'app/components/teacher/syllabus/syllabus.html',
-        controller: SyllabusController
+        bindings: {
+            manifest: '<'
+        },
+        controller: SyllabusController,
+        templateUrl: 'app/components/teacher/syllabus/syllabus.html'
     });

@@ -29,7 +29,16 @@ angular.module('proctor')
                 })
                 .state('teacher.syllabus', {
                     url: '/teacher/syllabus',
-                    component: 'teacher.syllabus.component'
+                    component: 'teacher.syllabus.component',
+                    resolve: {
+                        manifest: function (DlapService, PersonService) {
+                            return DlapService.get('getmanifest', {
+                                entityid: PersonService.user.enrollment.course.id
+                            }, function (response) {
+                                return response.manifest || {};
+                            });
+                        }
+                    }
                 });
 
             $urlRouterProvider.otherwise('/');
