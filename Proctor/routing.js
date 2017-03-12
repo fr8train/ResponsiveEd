@@ -21,7 +21,27 @@ angular.module('proctor')
                 })
                 .state('teacher.dashboard', {
                     url: '/teacher',
-                    component: 'teacher.dashboard.component'
+                    component: 'teacher.dashboard.component',
+                    resolve: {
+                        gradebook: function (DlapService, PersonService) {
+                            return DlapService.get('getentitygradebook2',{
+                                entityid: PersonService.user.enrollment.course.id,
+                                itemid: '*',
+                                select: 'enrollment.data'
+                            }, function (response) {
+                                return response.enrollments && response.enrollments.enrollment ?
+                                    response.enrollments.enrollment : {};
+                            });
+                        },
+                        course: function (DlapService, PersonService) {
+                            return DlapService.get('getcourse2', {
+                                courseid: PersonService.user.enrollment.course.id,
+                                select: 'data'
+                            }, function (response) {
+                                return response.course || {};
+                            });
+                        }
+                    }
                 })
                 .state('teacher.review', {
                     url: '/teacher/review',
