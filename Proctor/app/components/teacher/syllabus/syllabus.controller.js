@@ -2,11 +2,42 @@
  * Created by tyler on 1/18/2017.
  */
 
-function SyllabusController($scope) {
+function SyllabusController($scope, DlapService, PersonService, $timeout) {
     var self = this;
     self.name = 'SyllabusController';
     self.groupings = [];
     $scope.needToSave = false;
+    $scope.saveSuccessful = null;
+
+    self.analyzeGroupings = function (groupings) {
+        if (groupings) {
+            if (groupings.length) {
+                for (var i = 0, total = groupings.length; i < total; i++)
+                    self.processGrouping(groupings[i]);
+            } else {
+                self.processGrouping(groupings);
+            }
+        }
+    };
+
+    self.processGrouping = function (grouping) {
+        for (var i=0, total=self.groupings.length; i<total; i++) {
+            if (grouping.id === self.groupings[i].itemId) {
+                self.groupings[i].target = grouping.target;
+
+                for (var j=0, jTotal=grouping.dependencies.length; j < jTotal; j++) {
+                    for (var k=0, kTotal=self.groupings[i].items.length; k<kTotal; k++) {
+                        if (self.groupings[i].items[k].id === grouping.dependencies[j].id) {
+                            self.groupings[i].dependencies.push(self.groupings[i].items[k]);
+                            break;
+                        }
+                    }
+                }
+
+                break;
+            }
+        }
+    };
 
     self.analyzeManifestNode = function (node) {
         if (node.item && node.item.length) {
@@ -28,9 +59,66 @@ function SyllabusController($scope) {
 
     self.saveChanges = function () {
         $scope.needToSave = false;
+        $scope.saveSuccessful = null;
+
+        var payload = {
+            requests: {
+                course: [{
+                    courseid: PersonService.user.enrollment.course.id,
+                    data: {
+                        proctor: {
+                            groupings: []
+                        }
+                    }
+                }]
+            }
+        }
+
+        DlapService.post('updatecourses', null, payload, function (response) {
+            if (response.code !== "OK") {
+                return $scope.saveSuccessful = false;
+            }
+
+            for (var i=0, total=self.groupings.length; i<total; i++) {
+                if (self.groupings[i].target) {
+                    var proctorData = payload.requests.course[0].data.proctor;
+                    var groupingData = {
+                        id: self.groupings[i].itemId,
+                        target: self.groupings[i].target,
+                        dependencies: []
+                    }
+
+                    for (var j=0, jTotal = self.groupings[i].dependencies.length; j<jTotal; j++) {
+                        groupingData.dependencies.push({
+                            id: self.groupings[i].dependencies[j].id
+                        });
+                    }
+
+                    proctorData.groupings.push(groupingData);
+                }
+            }
+
+            DlapService.post('updatecourses', null, payload, function (response) {
+                if (response.code !== "OK") {
+                    $scope.saveSuccessful = false;
+                } else {
+                    $scope.saveSuccessful = true;
+
+                    $timeout(function () {
+                        $scope.saveSuccessful = null;
+                    }, 2000);
+                }
+            });
+        });
     };
 
-    if (this.manifest && this.manifest.item.length) self.analyzeManifestNode(this.manifest.item[0]);
+    if (this.manifest) {
+        if (this.manifest.item.length)
+            self.analyzeManifestNode(this.manifest.item[0]);
+
+        if (this.manifest.data.proctor)
+            self.analyzeGroupings(this.manifest.data.proctor.groupings);
+    }
 }
 
 function ItemDependencyGrouping(data, $scope) {

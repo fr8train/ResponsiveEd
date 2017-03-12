@@ -7,6 +7,23 @@
         </div>
     </div>
 </div>
+<div class="row" ng-if="saveSuccessful === true">
+    <div class="col-xs-12">
+        <div class="alert alert-success">
+            <h4>Nice job!</h4>
+            <p>The proctored assessment settings were saved successfully!</p>
+        </div>
+    </div>
+</div>
+<div class="row" ng-if="saveSuccessful === false">
+    <div class="col-xs-12">
+        <div class="alert alert-danger">
+            <h4>Hold up!</h4>
+            <p>The proctored assessment settings did not save because of an error.</p>
+            <p><a class="btn btn-danger" ng-click="$ctrl.saveChanges()">Click here to try again</a></p>
+        </div>
+    </div>
+</div>
 <h3>Syllabus
     <small>Assessment Configuration</small>
 </h3>
@@ -27,7 +44,7 @@
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label>Proctored Assessment</label>
-                            <select class="form-control" ng-model="grouping.target" ng-options="item.id as item.name for item in grouping.items track by item.id">
+                            <select class="form-control" ng-model="grouping.target" ng-options="item.id as item.name for item in grouping.items">
                                 <option value=""></option>
                             </select>
                         </div>
