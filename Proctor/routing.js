@@ -64,7 +64,8 @@ angular.module('proctor')
             $urlRouterProvider.otherwise('/');
         }
     ])
-    .run(['$state', '$transitions', 'PersonService', function ($state, $transitions, PersonService) {
+    .run(['$state', '$transitions', 'PersonService',
+        function ($state, $transitions, PersonService) {
         $state.defaultErrorHandler(function () {
         });
 
