@@ -21,18 +21,19 @@ function SyllabusController($scope, DlapService, PersonService, $timeout) {
     };
 
     self.processGrouping = function (grouping) {
-        for (var i=0, total=self.groupings.length; i<total; i++) {
+        for (var i = 0, total = self.groupings.length; i < total; i++) {
             if (grouping.id === self.groupings[i].itemId) {
                 self.groupings[i].target = grouping.target;
 
-                for (var j=0, jTotal=grouping.dependencies.length; j < jTotal; j++) {
-                    for (var k=0, kTotal=self.groupings[i].items.length; k<kTotal; k++) {
-                        if (self.groupings[i].items[k].id === grouping.dependencies[j].id) {
-                            self.groupings[i].dependencies.push(self.groupings[i].items[k]);
-                            break;
+                if (grouping.dependencies)
+                    for (var j = 0, jTotal = grouping.dependencies.length; j < jTotal; j++) {
+                        for (var k = 0, kTotal = self.groupings[i].items.length; k < kTotal; k++) {
+                            if (self.groupings[i].items[k].id === grouping.dependencies[j].id) {
+                                self.groupings[i].dependencies.push(self.groupings[i].items[k]);
+                                break;
+                            }
                         }
                     }
-                }
 
                 break;
             }
@@ -42,13 +43,13 @@ function SyllabusController($scope, DlapService, PersonService, $timeout) {
     self.analyzeManifestNode = function (node) {
         if (node.item && node.item.length) {
             var hasGradable = false;
-            for (var i=0, total = node.item.length; i<total; i++) {
+            for (var i = 0, total = node.item.length; i < total; i++) {
                 if (node.item[i].item && node.item[i].item.length)
                     self.analyzeManifestNode(node.item[i]);
 
                 if (node.item[i].data &&
-                node.item[i].data.gradable &&
-                node.item[i].data.gradable.$value)
+                    node.item[i].data.gradable &&
+                    node.item[i].data.gradable.$value)
                     hasGradable = true;
             }
 
@@ -79,7 +80,7 @@ function SyllabusController($scope, DlapService, PersonService, $timeout) {
                 return $scope.saveSuccessful = false;
             }
 
-            for (var i=0, total=self.groupings.length; i<total; i++) {
+            for (var i = 0, total = self.groupings.length; i < total; i++) {
                 if (self.groupings[i].target) {
                     var proctorData = payload.requests.course[0].data.proctor;
                     var groupingData = {
@@ -88,7 +89,7 @@ function SyllabusController($scope, DlapService, PersonService, $timeout) {
                         dependencies: []
                     }
 
-                    for (var j=0, jTotal = self.groupings[i].dependencies.length; j<jTotal; j++) {
+                    for (var j = 0, jTotal = self.groupings[i].dependencies.length; j < jTotal; j++) {
                         groupingData.dependencies.push({
                             id: self.groupings[i].dependencies[j].id
                         });
@@ -129,7 +130,7 @@ function ItemDependencyGrouping(data, $scope) {
     this.items = [];
     this.$scope = $scope;
 
-    for (var i=0, total = data.item.length; i< total; i++) {
+    for (var i = 0, total = data.item.length; i < total; i++) {
         if (data.item[i].data &&
             data.item[i].data.gradable &&
             data.item[i].data.gradable.$value)
@@ -159,11 +160,11 @@ function Item(data, parent) {
             parent.$scope.needToSave = true;
         }
     };
-    
+
     this.removeDependency = function () {
-        for (var i=0, len=parent.dependencies.length; i<len; i++) {
+        for (var i = 0, len = parent.dependencies.length; i < len; i++) {
             if (parent.dependencies[i] === this) {
-                parent.dependencies.splice(i,1);
+                parent.dependencies.splice(i, 1);
                 parent.$scope.needToSave = true;
                 break;
             }

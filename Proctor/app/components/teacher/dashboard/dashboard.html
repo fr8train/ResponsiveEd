@@ -5,9 +5,41 @@
             <div class="panel-heading">
                 <h3 class="panel-title">{{ ::grouping.target.name }}</h3>
             </div>
-            <div class="panel-body">
-                Panel content
-            </div>
+            <table class="table cell-vertical-center">
+                <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Completion</th>
+                    <th>
+                        <button type="button" class="btn btn-sm btn-default btn-block">Grant All</button>
+                    </th>
+                    <th class="text-center" width="100" style="width: 100px;">Done</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="participant in grouping.participants | orderBy: 'user.name.display'">
+                    <td>{{ ::participant.user.name.display }}</td>
+                    <td>
+                        <div class="progress" style="margin-bottom: 0">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ participant.complete }}"
+                                 aria-valuemin="0" aria-valuemax="100" style="width: {{ participant.complete }}%">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button ng-disabled="participant.complete < 100 || participant.submitted" type="button" class="btn btn-warning btn-block">Grant</button>
+                    </td>
+                    <td align="center">
+                        <span ng-if="participant.submitted && !participant.needsReview"
+                              class="label label-success"
+                        style="font-size: inherit;">
+                            <i class="glyphicon glyphicon-ok" aria-hidden="true" style="margin-right: 2px;"></i>
+                        </span>
+                        <button ng-if="participant.needsReview" type="button" class="btn btn-danger btn-block">Review</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
