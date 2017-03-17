@@ -1,4 +1,9 @@
 <h3>Dashboard</h3>
+<div class="row" ng-if="$ctrl.groupings.length === 0">
+    <div class="col-xs-12">
+        <h4 class="text-center" style="margin-top: 12%;">There are no proctored assessments set up for this course.</h4>
+    </div>
+</div>
 <div class="row" ng-repeat="grouping in $ctrl.groupings">
     <div class="col-xs-12">
         <div class="panel panel-warning">
