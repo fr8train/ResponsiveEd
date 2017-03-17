@@ -61,7 +61,7 @@
                                             Add <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li ng-repeat="item in grouping.items track by item.id">
+                                            <li ng-repeat="item in grouping.items track by item.id | orderBy: 'sequence'">
                                                 <a ng-click="item.addDependency()">{{ ::item.name }}</a>
                                             </li>
                                         </ul>
@@ -70,7 +70,7 @@
                             </div>
                             <hr style="margin-top: 0">
                             <div style="margin-bottom: 10px;"
-                                 ng-repeat="dependency in grouping.dependencies | orderBy: 'id' track by dependency.id">
+                                 ng-repeat="dependency in grouping.dependencies | orderBy: 'sequence' track by dependency.id">
                                 {{ ::dependency.name }}
                                 <button type="button"
                                         ng-click="dependency.removeDependency()"
