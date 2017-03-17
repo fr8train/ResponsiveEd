@@ -150,7 +150,10 @@ function ItemDependencyGrouping(data, $scope) {
 
 function Item(data, parent) {
     this.id = data.id || 0;
-    this.name = data.data && data.data.title ? data.data.title.$value : "NO NAME";
+    if (data.data) {
+        this.name = data.data.title ? data.data.title.$value : "NO NAME";
+        this.sequence = data.data.sequence ? data.data.sequence.$value : 0;
+    }
 
     this.addDependency = function () {
         if (parent.dependencies.filter(function (i) {
