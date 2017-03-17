@@ -6,7 +6,12 @@ function DashboardController(PersonService) {
     var self = this;
     self.name = 'DashboardController';
     self.groupings = this.course &&
-    this.course.data.proctor ? this.course.data.proctor.groupings : [];
+    this.course.data.proctor ?
+        (this.course.data.proctor.groupings.constructor === Array ||
+        (this.course.data.proctor.groupings.prop &&
+        this.course.data.proctor.groupings.prop.constructor === Array) ?
+            this.course.data.proctor.groupings : [this.course.data.proctor.groupings]) :
+        [];
 
     self.computeGroupingProgress = function () {
         for (var i = 0, total = self.groupings.length; i < total; i++) {
@@ -54,21 +59,21 @@ function GroupingParicipant(enrollment, groupingDependencies) {
                 self.dependencies.push(enrollment.grades.items.item[i]);
         }
     }
-    
+
     function calculateComplete() {
         if (self.dependencies.length === 0) {
             self.complete = 100;
             return;
         }
 
-        for (var i=0, total=self.dependencies.length; i<total; i++) {
+        for (var i = 0, total = self.dependencies.length; i < total; i++) {
             if (self.dependencies[i].achieved && self.dependencies[i].achieved >= 0) {
                 ++self.complete;
             } else if (self.dependencies[i].status) {
                 var status = self.dependencies[i].status.toString(16);
 
                 if (status.length >= 2 &&
-                parseInt(status.substring(status.length - 2, status.length - 1),16) >= 8) {
+                    parseInt(status.substring(status.length - 2, status.length - 1), 16) >= 8) {
                     ++self.complete;
                 }
             }
