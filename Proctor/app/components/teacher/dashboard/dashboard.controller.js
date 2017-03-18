@@ -22,7 +22,7 @@ function DashboardController(PersonService) {
                         grouping.dependencies : [grouping.dependencies];
 
                 for (var k = 0, kTotal = groupingDependencies.length; k < kTotal; k++) {
-                    dependenciesMap.push(grouping.dependencies[k].id);
+                    dependenciesMap.push(groupingDependencies[k].id);
                 }
             }
 
