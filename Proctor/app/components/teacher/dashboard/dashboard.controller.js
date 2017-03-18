@@ -7,9 +7,7 @@ function DashboardController(PersonService) {
     self.name = 'DashboardController';
     self.groupings = this.course &&
     this.course.data.proctor ?
-        (this.course.data.proctor.groupings.constructor === Array ||
-        (this.course.data.proctor.groupings.prop &&
-        this.course.data.proctor.groupings.prop.constructor === Array) ?
+        (angular.isArray(this.course.data.proctor.groupings) ?
             this.course.data.proctor.groupings : [this.course.data.proctor.groupings]) :
         [];
 
@@ -17,15 +15,20 @@ function DashboardController(PersonService) {
         for (var i = 0, total = self.groupings.length; i < total; i++) {
             var grouping = self.groupings[i];
             grouping.participants = [];
-            var dependencies = [];
-            if (grouping.dependencies)
-                for (var k = 0, kTotal = grouping.dependencies.length; k < kTotal; k++) {
-                    dependencies.push(grouping.dependencies[k].id);
+            var dependenciesMap = [];
+            if (grouping.dependencies) {
+                var groupingDependencies =
+                    angular.isArray(grouping.dependencies) ?
+                        grouping.dependencies : [grouping.dependencies];
+
+                for (var k = 0, kTotal = groupingDependencies.length; k < kTotal; k++) {
+                    dependenciesMap.push(grouping.dependencies[k].id);
                 }
+            }
 
             if (self.gradebook) {
                 for (var j = 0, jTotal = self.gradebook.length; j < jTotal; j++) {
-                    grouping.participants.push(new GroupingParicipant(self.gradebook[j], dependencies));
+                    grouping.participants.push(new GroupingParicipant(self.gradebook[j], dependenciesMap));
                 }
             }
         }

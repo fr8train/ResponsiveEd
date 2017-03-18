@@ -11,7 +11,7 @@ function SyllabusController($scope, DlapService, PersonService, $timeout) {
 
     self.analyzeGroupings = function (groupings) {
         if (groupings) {
-            if (groupings.length) {
+            if (angular.isArray(groupings)) {
                 for (var i = 0, total = groupings.length; i < total; i++)
                     self.processGrouping(groupings[i]);
             } else {
@@ -25,15 +25,20 @@ function SyllabusController($scope, DlapService, PersonService, $timeout) {
             if (grouping.id === self.groupings[i].itemId) {
                 self.groupings[i].target = grouping.target;
 
-                if (grouping.dependencies)
-                    for (var j = 0, jTotal = grouping.dependencies.length; j < jTotal; j++) {
+                if (grouping.dependencies) {
+                    var groupingDependencies =
+                        angular.isArray(grouping.dependencies) ?
+                            grouping.dependencies : [grouping.dependencies];
+
+                    for (var j = 0, jTotal = groupingDependencies.length; j < jTotal; j++) {
                         for (var k = 0, kTotal = self.groupings[i].items.length; k < kTotal; k++) {
-                            if (self.groupings[i].items[k].id === grouping.dependencies[j].id) {
+                            if (self.groupings[i].items[k].id === groupingDependencies[j].id) {
                                 self.groupings[i].dependencies.push(self.groupings[i].items[k]);
                                 break;
                             }
                         }
                     }
+                }
 
                 break;
             }
