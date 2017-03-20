@@ -18,6 +18,10 @@ angular.module('proctor')
 
         var user = {
             id: null,
+            name: {
+                first: null,
+                last: null
+            },
             enrollment: {
                 id: null,
                 course: {
@@ -38,11 +42,19 @@ angular.module('proctor')
 
         var loadCurrentUser = function (callback) {
             if (user.enrollment.id) {
-                DlapService.get('getenrollment3', {enrollmentid: user.enrollment.id}, function (response) {
+                DlapService.get('getenrollment3', {
+                    enrollmentid: user.enrollment.id,
+                    select: 'user'
+                }, function (response) {
                     user.id = response.enrollment.userid;
                     user.enrollment.id = response.enrollment.id;
                     user.enrollment.course.id = response.enrollment.courseid;
                     user.enrollment.isTeacher = determineIsTeacherFromRights(response.enrollment.privileges);
+
+                    if (response.enrollment.user) {
+                        user.name.first = response.enrollment.user.firstname;
+                        user.name.last = response.enrollment.user.lastname;
+                    }
 
                     if (angular.isFunction(callback)) callback();
                 })

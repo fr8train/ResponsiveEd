@@ -2,7 +2,7 @@
  * Created by tyler on 3/11/2017.
  */
 
-function DashboardController(PersonService) {
+function DashboardController(PersonService, DlapService) {
     var self = this;
     self.name = 'DashboardController';
     self.groupings = this.course &&
@@ -15,6 +15,16 @@ function DashboardController(PersonService) {
         for (var i = 0, total = self.groupings.length; i < total; i++) {
             var grouping = self.groupings[i];
             grouping.participants = [];
+
+            grouping.grantAccessAll = function () {
+                if (this.participants.length > 0)
+                    for (var i = 0, total = this.participants.length; i < total; i++) {
+                        if (this.participants[i].complete === 100 && !this.participants[i].submitted) {
+                            this.participants[i].grantAccess();
+                        }
+                    }
+            }.bind(grouping);
+
             var dependenciesMap = [];
             if (grouping.dependencies) {
                 var groupingDependencies =
@@ -28,7 +38,7 @@ function DashboardController(PersonService) {
 
             if (self.gradebook) {
                 for (var j = 0, jTotal = self.gradebook.length; j < jTotal; j++) {
-                    grouping.participants.push(new GroupingParicipant(self.gradebook[j], dependenciesMap));
+                    grouping.participants.push(new GroupingParicipant(self.gradebook[j], dependenciesMap, PersonService, DlapService));
                 }
             }
         }
@@ -37,16 +47,18 @@ function DashboardController(PersonService) {
     self.computeGroupingProgress();
 }
 
-function GroupingParicipant(enrollment, groupingDependencies) {
+function GroupingParicipant(enrollment, groupingDependencies, PersonService, DlapService) {
     var self = this;
-    self.id = enrollment.id;
     self.user = {
         id: enrollment.userid,
+        enrollment: {
+            id: enrollment.id
+        },
         name: {
             first: enrollment.user ? enrollment.user.firstname : 'NO_NAME',
             last: enrollment.user ? enrollment.user.lastname : 'NO_NAME'
         }
-    }
+    };
 
     self.user.name.display = self.user.name.last + ', ' + self.user.name.first;
     self.dependencies = [];
@@ -61,6 +73,28 @@ function GroupingParicipant(enrollment, groupingDependencies) {
             if (groupingDependencies.indexOf(enrollment.grades.items.item[i].itemid) >= 0)
                 self.dependencies.push(enrollment.grades.items.item[i]);
         }
+    }
+
+    self.grantAccess = function () {
+        DlapService.post('sendmail', {
+            enrollmentid: PersonService.user.enrollment.id
+        }, {
+            email: {
+                enrollments: {
+                    enrollment: [
+                        {id: self.user.enrollment.id}
+                    ]
+                },
+                subject: {
+                    $value: 'You may now take your test.'
+                },
+                body: {
+                    $value: '<h2>You may now take your test!</h2>' +
+                    '<p>You have accomplished all of the necessary prerequisites to take your proctored exam. Please log in and navigate to the Proctor icon on the left hand menu to begin taking your exam. Feel free to contact me if you have any problems or questions.</p>' +
+                    '<p>Sincerely, ' + PersonService.user.name.first + ' ' + PersonService.user.name.last + '</p>'
+                }
+            }
+        });
     }
 
     function calculateComplete() {
