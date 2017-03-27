@@ -38,7 +38,9 @@ function DashboardController(PersonService, DlapService) {
 
             if (self.gradebook) {
                 for (var j = 0, jTotal = self.gradebook.length; j < jTotal; j++) {
-                    grouping.participants.push(new GroupingParicipant(self.gradebook[j], dependenciesMap, PersonService, DlapService));
+                    grouping.participants.push(
+                        new GroupingParicipant(self.gradebook[j], grouping.target, dependenciesMap, PersonService, DlapService)
+                    );
                 }
             }
         }
@@ -47,12 +49,13 @@ function DashboardController(PersonService, DlapService) {
     self.computeGroupingProgress();
 }
 
-function GroupingParicipant(enrollment, groupingDependencies, PersonService, DlapService) {
+function GroupingParicipant(enrollment, groupingTarget, groupingDependencies, PersonService, DlapService) {
     var self = this;
     self.user = {
         id: enrollment.userid,
         enrollment: {
-            id: enrollment.id
+            id: enrollment.id,
+            data: filterEnrollmentData(enrollment.data)
         },
         name: {
             first: enrollment.user ? enrollment.user.firstname : 'NO_NAME',
@@ -61,6 +64,7 @@ function GroupingParicipant(enrollment, groupingDependencies, PersonService, Dla
     };
 
     self.user.name.display = self.user.name.last + ', ' + self.user.name.first;
+    self.target = groupingTarget;
     self.dependencies = [];
     self.complete = 0;
     self.submitted = false;
@@ -76,6 +80,37 @@ function GroupingParicipant(enrollment, groupingDependencies, PersonService, Dla
     }
 
     self.grantAccess = function () {
+        var proctorAttempt = null;
+
+        for (var i=0, len=self.user.enrollment.data.proctor.length; i<len; i++) {
+            if (self.user.enrollment.data.proctor[i].target.id === self.target.id) {
+                proctorAttempt = self.user.enrollment.data.proctor[i];
+                break;
+            }
+        }
+
+        if (!proctorAttempt)
+            self.user.enrollment.data.proctor.push(new ProctorAttempt(self.target));
+
+        updateEnrollmentData();
+
+        notifyStudent();
+    }
+
+    function updateEnrollmentData() {
+        DlapService.post('updateenrollments', null, {
+            requests: {
+                enrollment: [
+                    {
+                        enrollmentid: self.user.enrollment.id,
+                        data: self.user.enrollment.data
+                    }
+                ]
+            }
+        });
+    }
+
+    function notifyStudent() {
         DlapService.post('sendmail', {
             enrollmentid: PersonService.user.enrollment.id
         }, {
@@ -95,6 +130,10 @@ function GroupingParicipant(enrollment, groupingDependencies, PersonService, Dla
                 }
             }
         });
+    }
+
+    function filterEnrollmentData(data) {
+        return data && data.proctor ? data.proctor : { proctor: [] };
     }
 
     function calculateComplete() {
@@ -120,4 +159,13 @@ function GroupingParicipant(enrollment, groupingDependencies, PersonService, Dla
     }
 
     calculateComplete();
+}
+
+function ProctorAttempt(target) {
+    var self = this;
+
+    self.target = target;
+    self.attempts = 0;
+    self.isAuthorizedForRetry = false;
+    self.events = [];
 }
